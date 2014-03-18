@@ -1,6 +1,6 @@
 /**
  * Created by donpage on 3/17/14.
- *
+ * Based on iLEL's Tile based Game
  */
 (function () {
 
@@ -33,10 +33,19 @@
     var tileW = 10;
     var tileH = 10;
 
-    //map array taken from iLEL on codepen
+
+    var inCombat = false;
+//  going to try to put this code in the object player.
+//    var playerStr = ~~(Math.random() * (5 - 4 +1)) +4;
+//    var playerArm = ~~(Math.random() * (5 - 4 +1)) +4;
+//    var playerHP = 100;
+
     var mobArray =
-        [
-            ["Skeleton",100,]
+        [    //name     hp  str arm
+            ["Skeleton",100,5,3],
+            ["Knight",110,4,7],
+            ["Dragon",100,7,5],
+            ["Merman",100,5,4]
         ];
     var mapArray =
         [
@@ -277,12 +286,12 @@
         this.width = width;
         this.height = height;
         this.color = color;
-        this.weapon = "";
-        this.armor = "";
-        this.shield = "";
+        this.weapon = 0;
+        this.plate = 0;
+        this.shield = 0;
         this.hp = 100;
-        this.str = Math.floor(Math.random() * (7 - 4 +1)) +4;
-        this.arm = Math.floor(Math.random() * (7 - 4 +1)) +4;
+        this.str = Math.floor(Math.random() * (5 - 4 +1)) +4;
+        this.arm = Math.floor(Math.random() * (2 - 1 +1)) +1;
 
     }
 
@@ -303,9 +312,71 @@
     function clamp(i, min, max){
         return Math.max(Math.min(i, max),min);
     }
+
+
+
     function startFight(){
-//        console.log(mapArray[playerX][playerY]);
-        console.log("started fight!")
+        inCombat = true;
+        var pickRandomMonster = ~~(Math.random()*mobArray.length);
+        console.log(mobArray[pickRandomMonster]);
+        var mobName = mobArray[pickRandomMonster][0];
+        var mobHP = mobArray[pickRandomMonster][1];
+        var mobStr = mobArray[pickRandomMonster][2];
+        var mobArm = mobArray[pickRandomMonster][3];
+
+        var getPlayerStr = player.weapon + player.str;
+        var getPlayerArm = player.shield + player.plate + player.arm;
+
+
+
+        while(inCombat){
+            var mobDamageMulti = ~~(Math.random()*3)+1;
+            var playerDamageMulti = ~~(Math.random()*3)+1;
+
+            var playerDefaultDamage = ~~(Math.random()*(5-1))+1 + playerDamageMulti;
+            var mobDefaultDamage = ~~(Math.random()*(5-1))+1 + mobDamageMulti;
+
+            var playerDamageOutput = (getPlayerStr * playerDefaultDamage - mobArm);
+            var mobDamageOutput = (mobStr * mobDefaultDamage - getPlayerArm);
+
+            if (playerDamageOutput < 0){
+                playerDamageOutput = 0;
+            }
+            if (mobDamageOutput < 0){
+                mobDamageOutput = 0;
+            }
+
+            var currentMobHealth = mobHP - playerDamageOutput;
+            var currentPlayerHealth = player.hp - mobDamageOutput;
+
+            console.log("you hit the",mobName," for",playerDamageOutput,"and bring his health down to:"+currentMobHealth);
+            console.log("the mob hits you for",mobDamageOutput,"and brings your health down to:"+currentPlayerHealth);
+
+            if (currentMobHealth <= 0 || currentPlayerHealth <=0){
+                inCombat = false;
+                console.log("combat over");
+            } else {
+                mobDamageMulti = '';//resets vars so the hits are different and more random.
+                playerDamageMulti = '';
+                playerDefaultDamage = '';
+                mobDefaultDamage = '';
+                inCombat = true;
+            }
+
+            mobHP = currentMobHealth;
+            player.hp = currentPlayerHealth;
+            console.log(mobName+":"+currentMobHealth,"vs",currentPlayerHealth+":Rect")
+
+
+        }
+
+
+
+
+
+
+
+
     }
 
 })();
