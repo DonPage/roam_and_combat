@@ -4,7 +4,7 @@
  */
 (function () {
 
-console.log("map loading...");
+
 //    window.requestAnimFrame = (function(){
 //        return  window.requestAnimationFrame       ||
 //            window.webkitRequestAnimationFrame ||
@@ -17,6 +17,7 @@ console.log("map loading...");
     //Making map canvas
     var map = document.createElement('canvas');
     var ctx = map.getContext('2d');
+
 
     map.width = 500;
     map.height = 500;
@@ -33,6 +34,10 @@ console.log("map loading...");
     var tileH = 10;
 
     //map array taken from iLEL on codepen
+    var mobArray =
+        [
+            ["Skeleton",100,]
+        ];
     var mapArray =
         [
             ["g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g","g"],
@@ -93,8 +98,9 @@ console.log("map loading...");
     var marble = new tile("http://t3.gstatic.com/images?q=tbn:ANd9GcQxsaJ2M2uI_dBA0vd1IHmT_uFO4Js7iIWqI_Fv3QplUeLUqhK5pA", 0, 0, tileW, tileH);
     var water = new tile("http://opengameart.org/sites/default/files/brushwalker437.png", 0, 0, tileW, tileH);
     var hole = new tile("http://opengameart.org/sites/default/files/Airlock_0.png", 0, 0, tileW,tileH);
+    var Dmob = new tile("http://opengameart.org/sites/default/files/imp%20death_blue.gif", 0, 0, tileW,tileH);
 
-    var player = new rect(0,0, tileW, tileH);
+    var player = new rect(0,0, tileW, tileH); //makes new player (which is a rectangle).
 
     (function animLoop(){
         requestAnimationFrame(animLoop);
@@ -110,6 +116,9 @@ console.log("map loading...");
     }
 
     function drawMap(){
+
+
+
         for (var i=0;i<mapArray.length;i++){ //loop inside of loop to get to read the x and y map array.
             for (var j=0;j<mapArray[i].length;j++){
                 dirt.x = j * tileW;
@@ -124,6 +133,8 @@ console.log("map loading...");
                 water.y = i * tileH;
                 hole.x = j * tileW;
                 hole.y = i * tileH;
+
+
 
 
                 if (mapArray[i][j] === "d")
@@ -156,20 +167,25 @@ console.log("map loading...");
                     drawTile(hole);
                 }
             }
+
         }
 
     }
+    function ranNumber(){
 
+        return ~~(Math.random() * (10 - 1 +1)) +1;
+    }
 
 
     function update(){
+
         delta = clock.getDelta() *1000;
-
         document.querySelector('#fps').innerHTML = " " + 1000 / delta;
-
         var column = (map.width - player.x) /tileW;
         var row = (map.height - player.y) /tileH;
-        document.querySelector('#loc').innerHTML = "x: "+ column +" y: "+ row +"";
+
+//        var standing = mapArray[tile.x,tile.y];
+        document.querySelector('#loc').innerHTML = " x: "+ column +" y: "+ row +" standing: ";
 
         wallIsct(player);
     }
@@ -178,34 +194,68 @@ console.log("map loading...");
         evt = evt || window.event;
         var charCode = evt.keyCode || evt.which;
         var charStr = String.fromCharCode(charCode); //returns keydown as a string.
-        console.log(charStr);
+//        console.log(charStr);
+        var MobPercentage=3;
+        var KnightPercentage=2;
+        var MermanPercentage=1;
+        var playerX = player.x;
+        var playerY = player.y;
 
-        key = charStr; //charStr is now = key
+
+        key = charStr; //keydown is now = key
 
         if (key === "A")
         {
             player.x -= tileW;
+            if (ranNumber()<MobPercentage){
+                startFight();
+            } else{
+                console.log("you find nothing")}
+
         }
 
         if (key === "D")
         {
             player.x += tileW;
+            if (ranNumber()<MobPercentage){
+                startFight();
+            } else{
+                console.log("you find nothing")}
+
         }
 
         if (key === "W")
         {
             player.y -= tileH;
+            if (ranNumber()<MobPercentage){
+                startFight();
+            } else{
+                console.log("you find nothing")}
         }
 
         if (key === "S")
         {
             player.y += tileH;
+            if (ranNumber()<MobPercentage){
+                startFight();
+            } else{
+                console.log("you find nothing")}
+
+        }
+        if (key === "F")
+        {
+            console.log(player);
+            actionButton();
         }
     };
 
     document.onkeyup = function(){ //everytime a key is released it resets the variable 'key'.
         key = "";
     };
+
+    function actionButton(){
+        console.log("action function");
+    }
 
     function tile(src, x, y, width, height){
         this.x = x;
@@ -227,7 +277,15 @@ console.log("map loading...");
         this.width = width;
         this.height = height;
         this.color = color;
+        this.weapon = "";
+        this.armor = "";
+        this.shield = "";
+        this.hp = 100;
+        this.str = Math.floor(Math.random() * (7 - 4 +1)) +4;
+        this.arm = Math.floor(Math.random() * (7 - 4 +1)) +4;
+
     }
+
 
     function drawRect(object){
         ctx.beginPath();
@@ -244,6 +302,10 @@ console.log("map loading...");
 
     function clamp(i, min, max){
         return Math.max(Math.min(i, max),min);
+    }
+    function startFight(){
+//        console.log(mapArray[playerX][playerY]);
+        console.log("started fight!")
     }
 
 })();
