@@ -69,8 +69,8 @@ console.log("map loading...");
             ["g","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","c","m","m","m","m","c","c","c","m","m","m","m","c","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","g"],
             ["g","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","c","m","m","m","c","c","c","m","m","m","c","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","g"],
             ["g","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","c","m","m","c","c","c","m","m","c","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","g"],
-            ["g","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","c","m","c","c","c","m","c","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","g"],
-            ["g","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","c","c","c","c","c","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","g"],
+            ["g","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","c","m","c","c","c","m","c","d","d","d","d","d","d","d","d","d","h","h","d","d","d","d","d","d","d","d","d","d","g"],
+            ["g","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","c","c","c","c","c","d","d","d","d","d","d","d","d","d","d","h","h","d","d","d","d","d","d","d","d","d","d","g"],
             ["g","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","c","c","c","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","g"],
             ["g","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","c","c","c","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","g"],
             ["g","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","c","c","c","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","d","g"],
@@ -92,6 +92,7 @@ console.log("map loading...");
     var cobble = new tile("http://i.imgur.com/qRaMK.png", 0, 0, tileW, tileH);
     var marble = new tile("http://t3.gstatic.com/images?q=tbn:ANd9GcQxsaJ2M2uI_dBA0vd1IHmT_uFO4Js7iIWqI_Fv3QplUeLUqhK5pA", 0, 0, tileW, tileH);
     var water = new tile("http://opengameart.org/sites/default/files/brushwalker437.png", 0, 0, tileW, tileH);
+    var hole = new tile("http://opengameart.org/sites/default/files/Airlock_0.png", 0, 0, tileW,tileH);
 
     var player = new rect(0,0, tileW, tileH);
 
@@ -121,6 +122,9 @@ console.log("map loading...");
                 marble.y = i * tileH;
                 water.x = j * tileW;
                 water.y = i * tileH;
+                hole.x = j * tileW;
+                hole.y = i * tileH;
+
 
                 if (mapArray[i][j] === "d")
                 {
@@ -145,6 +149,11 @@ console.log("map loading...");
                 if (mapArray[i][j] === "w")
                 {
                     drawTile(water);
+                }
+
+                if (mapArray[i][j] === "h")
+                {
+                    drawTile(hole);
                 }
             }
         }
