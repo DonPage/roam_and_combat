@@ -148,14 +148,14 @@ console.log("map loading...");
                 }
             }
         }
-      
+
     }
 
 
 
     function update(){
         delta = clock.getDelta() *1000;
-        document.querySelector('#fps').innerHTML = "FPS: " + 1000 / delta;
+        document.querySelector('#fps').innerHTML = " " + 1000 / delta;
 
         var column = (map.width - player.x) /tileW;
         var row = (map.height - player.y) /tileH;
