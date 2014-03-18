@@ -5,14 +5,14 @@
 (function () {
 
 console.log("map loading...");
-    window.requestAnimFrame = (function(){
-        return  window.requestAnimationFrame       ||
-            window.webkitRequestAnimationFrame ||
-            window.mozRequestAnimationFrame    ||
-            function(callback){
-                window.setTimeout(callback, 1000 / 60);
-            };
-    })();
+//    window.requestAnimFrame = (function(){
+//        return  window.requestAnimationFrame       ||
+//            window.webkitRequestAnimationFrame ||
+//            window.mozRequestAnimationFrame    ||
+//            function(callback){
+//                window.setTimeout(callback, 1000 / 60);
+//            };
+//    })();
 
     //Making map canvas
     var map = document.createElement('canvas');
@@ -23,7 +23,7 @@ console.log("map loading...");
 
     document.body.appendChild(map);
 
-    var clock = new THREE.Clock();
+    var clock = new THREE.Clock(); //this code if from the imported script
     var time = clock.getElapsedTime();
     var delta = clock.getDelta() * 1000;
 
@@ -155,6 +155,7 @@ console.log("map loading...");
 
     function update(){
         delta = clock.getDelta() *1000;
+
         document.querySelector('#fps').innerHTML = " " + 1000 / delta;
 
         var column = (map.width - player.x) /tileW;
