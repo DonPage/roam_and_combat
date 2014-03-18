@@ -3,6 +3,7 @@
  *
  */
 (function () {
+
 console.log("map loading...");
     window.requestAnimFrame = (function(){
         return  window.requestAnimationFrame       ||
@@ -21,6 +22,10 @@ console.log("map loading...");
     map.height = 500;
 
     document.body.appendChild(map);
+
+    var clock = new THREE.Clock();
+    var time = clock.getElapsedTime();
+    var delta = clock.getDelta() * 1000;
 
     var key = "";
 
@@ -90,8 +95,8 @@ console.log("map loading...");
 
     var player = new rect(0,0, tileW, tileH);
 
-    (function animationLoop(){
-        requestAnimationFrame(animationLoop);
+    (function animLoop(){
+        requestAnimationFrame(animLoop);
 
         render();
         update();
@@ -143,11 +148,10 @@ console.log("map loading...");
                 }
             }
         }
+      
     }
 
-    var clock = new THREE.Clock();
-    var time = clock.getElapsedTime();
-    var delta = clock.getDelta() * 1000;
+
 
     function update(){
         delta = clock.getDelta() *1000;
