@@ -110,7 +110,7 @@ console.log("map loading...");
     }
 
     function drawMap(){
-        for (var i=0;i<mapArray.length;i++){ //loop inside of loop to get to the 2nd dimtion of the map.
+        for (var i=0;i<mapArray.length;i++){ //loop inside of loop to get to read the x and y map array.
             for (var j=0;j<mapArray[i].length;j++){
                 dirt.x = j * tileW;
                 dirt.y = i * tileH;
@@ -178,6 +178,7 @@ console.log("map loading...");
         evt = evt || window.event;
         var charCode = evt.keyCode || evt.which;
         var charStr = String.fromCharCode(charCode); //returns keydown as a string.
+        console.log(charStr);
 
         key = charStr; //charStr is now = key
 
@@ -236,8 +237,7 @@ console.log("map loading...");
         ctx.stroke();
     }
 
-    function wallIsct(object)
-    {
+    function wallIsct(object){
         object.x = clamp(object.x, 0, map.width - object.width);
         object.y = clamp(object.y, 0, map.height - object.height);
     }
