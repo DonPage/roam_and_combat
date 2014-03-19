@@ -22,35 +22,52 @@
     <favorites_list name="files" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="43" selection-start="609" selection-end="609" vertical-scroll-proportion="-12.391304" vertical-offset="0" max-vertical-offset="450">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="canvas.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/canvas.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="map.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/map.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="398" column="0" selection-start="20826" selection-end="20826" vertical-scroll-proportion="0.7840314" vertical-offset="5371" max-vertical-offset="6135">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.51805556">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="36" column="30" selection-start="982" selection-end="982" vertical-scroll-proportion="-23.47826" vertical-offset="0" max-vertical-offset="915">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="canvas.css" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/canvas.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="14" column="23" selection-start="213" selection-end="213" vertical-scroll-proportion="0.13513513" vertical-offset="105" max-vertical-offset="915">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="map.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/map.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="426" column="70" selection-start="21472" selection-end="21472" vertical-scroll-proportion="0.0" vertical-offset="5941" max-vertical-offset="6720">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="map.js" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/map.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="431" column="57" selection-start="21765" selection-end="21765" vertical-scroll-proportion="0.6662304" vertical-offset="5956" max-vertical-offset="6720">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -60,8 +77,8 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/canvas.css" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/canvas.css" />
         <option value="$PROJECT_DIR$/map.js" />
       </list>
     </option>
@@ -212,23 +229,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/canvas.css">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
+        <state line="36" column="30" selection-start="982" selection-end="982" vertical-scroll-proportion="-23.47826" vertical-offset="0" max-vertical-offset="915">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/canvas.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="43" selection-start="609" selection-end="609" vertical-scroll-proportion="-12.391304" vertical-offset="0" max-vertical-offset="450">
+        <state line="14" column="23" selection-start="213" selection-end="213" vertical-scroll-proportion="0.13513513" vertical-offset="105" max-vertical-offset="915">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/map.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="398" column="0" selection-start="20826" selection-end="20826" vertical-scroll-proportion="0.7840314" vertical-offset="5371" max-vertical-offset="6135">
+        <state line="431" column="57" selection-start="21765" selection-end="21765" vertical-scroll-proportion="0.6662304" vertical-offset="5956" max-vertical-offset="6720">
           <folding />
         </state>
       </provider>

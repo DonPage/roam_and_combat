@@ -5,6 +5,7 @@
 (function () {
     $(function() {
 
+
     window.requestAnimFrame = (function(){
         return  window.requestAnimationFrame       ||
             window.webkitRequestAnimationFrame ||
@@ -32,6 +33,9 @@
 
     var tileW = 10;
     var tileH = 10;
+
+        //loot IDs
+    var Armor = 1;
 
 
     var inCombat = false;
@@ -180,9 +184,9 @@
         }
 
     }
-    function ranNumber(){
 
-        return ~~(Math.random() * (10 - 1 +1)) +1;
+    function ranNumber(){
+        return ~~(Math.random()*5);
     }
 
 
@@ -290,7 +294,7 @@
         this.weapon = 0;
         this.plate = 0;
         this.shield = 0;
-        this.hp = 300;
+        this.hp = 3000;
         this.str = 3; //Math.floor(Math.random() * (5 - 4 +1)) +4;
         this.arm = 3;//Math.floor(Math.random() * (2 - 1 +1)) +1;
 
@@ -313,6 +317,7 @@
     function clamp(i, min, max){
         return Math.max(Math.min(i, max),min);
     }
+
 
 
 
@@ -375,7 +380,11 @@
                     death();
                 }
                 if (currentMobHealth < currentPlayerHealth && currentPlayerHealth > 0){
+                    spawnLoot();
+
+
                     console.log("you win");
+
                 }
                 else if (currentMobHealth < currentPlayerHealth && currentPlayerHealth < 0){
                     console.log("you both died");
@@ -392,12 +401,42 @@
     function death(){
         player = new rect(0,0, tileW, tileH); //resets player.
 
+    }
+
+    function charPanel(){
+
 
     }
 
 
+charPanel();
 
+    function spawnLoot(){
+        var randomNumberItem = ~~(Math.random()*6000);
+        var loot =
+            [
+                //CSS          name  ID  stats
+                ["#plateDrag","ChestPlate of Bronze", 0 , 0.8],
+                ["#shieldDrag","Shield of the Outlands",1,0.5],
+                ["#weaponDrag","Sword of the Starter",2,2.5]
 
+            ];
+        var randomItem = ~~(Math.random()*loot.length);
+        console.log(loot[randomItem][0]);
+
+        $(loot[randomItem][0]).draggable().css({"visibility":"hidden","border":"dotted 2px gray","float":"right","width":"10%","margin":"2em",height:"3em"});
+        $(loot[randomItem][0]).draggable().css("visibility","visible");
+
+        $("#plateDrop").droppable({
+            drop: function(event, ui){
+                $(this).addClass("equip").find("p").html(loot[randomItem][1]);
+
+            }
+        });
+        randomItem = '';
+        randomNumberItem = '';
+
+    }
 
 });
 })();
