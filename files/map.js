@@ -3,16 +3,16 @@
  * Based on iLEL's Tile based Game
  */
 (function () {
+    $(function() {
 
-
-//    window.requestAnimFrame = (function(){
-//        return  window.requestAnimationFrame       ||
-//            window.webkitRequestAnimationFrame ||
-//            window.mozRequestAnimationFrame    ||
-//            function(callback){
-//                window.setTimeout(callback, 1000 / 60);
-//            };
-//    })();
+    window.requestAnimFrame = (function(){
+        return  window.requestAnimationFrame       ||
+            window.webkitRequestAnimationFrame ||
+            window.mozRequestAnimationFrame    ||
+            function(callback){
+                window.setTimeout(callback, 1000 / 60);
+            };
+    })();
 
     //Making map canvas
     var map = document.createElement('canvas');
@@ -194,7 +194,8 @@
         var row = (map.height - player.y) /tileH;
 
 //        var standing = mapArray[tile.x,tile.y];
-        document.querySelector('#loc').innerHTML = " x: "+ column +" y: "+ row +" standing: ";
+        document.querySelector('#loc').innerHTML = " x: "+ column +" y: "+ row +"  ";
+        document.querySelector('#combatCan').innerHTML ="Stats: "+player.hp+"% || str: "+player.str+" || def:"+player.arm;
 
         wallIsct(player);
     }
@@ -289,9 +290,9 @@
         this.weapon = 0;
         this.plate = 0;
         this.shield = 0;
-        this.hp = 100;
-        this.str = Math.floor(Math.random() * (5 - 4 +1)) +4;
-        this.arm = Math.floor(Math.random() * (2 - 1 +1)) +1;
+        this.hp = 300;
+        this.str = 3; //Math.floor(Math.random() * (5 - 4 +1)) +4;
+        this.arm = 3;//Math.floor(Math.random() * (2 - 1 +1)) +1;
 
     }
 
@@ -354,6 +355,7 @@
 
             if (currentMobHealth <= 0 || currentPlayerHealth <=0){
                 inCombat = false;
+
                 console.log("combat over");
             } else {
                 mobDamageMulti = '';//resets vars so the hits are different and more random.
@@ -365,18 +367,37 @@
 
             mobHP = currentMobHealth;
             player.hp = currentPlayerHealth;
-            console.log(mobName+":"+currentMobHealth,"vs",currentPlayerHealth+":Rect")
+            console.log(mobName+":"+currentMobHealth,"vs",currentPlayerHealth+":Rect");
 
+            if (inCombat === false){
+                if (currentMobHealth > currentPlayerHealth){
+                    console.log("the mob wins");
+                    death();
+                }
+                if (currentMobHealth < currentPlayerHealth && currentPlayerHealth > 0){
+                    console.log("you win");
+                }
+                else if (currentMobHealth < currentPlayerHealth && currentPlayerHealth < 0){
+                    console.log("you both died");
+                    death();
+                }
+
+            }
 
         }
 
 
+    }
 
-
-
-
+    function death(){
+        player = new rect(0,0, tileW, tileH); //resets player.
 
 
     }
 
+
+
+
+
+});
 })();
