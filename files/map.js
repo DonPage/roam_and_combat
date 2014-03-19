@@ -416,7 +416,7 @@ charPanel();
         var loot =
             [
                 //CSS          name  ID  stats
-                ["#plateDrag","ChestPlate of Bronze", 0 , 0.8],
+                ["#plateDrag"+randomNumberItem,"ChestPlate of Bronze", 0 , 0.8],
                 ["#shieldDrag","Shield of the Outlands",1,0.5],
                 ["#weaponDrag","Sword of the Starter",2,2.5]
 
