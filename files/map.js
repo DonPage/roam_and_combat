@@ -433,8 +433,8 @@ charPanel();
 
             }
         });
-        randomItem = '';
-        randomNumberItem = '';
+//        randomItem = '';
+//        randomNumberItem = '';
 
     }
 
