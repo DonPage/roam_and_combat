@@ -13,6 +13,8 @@ p, div {
 #bag
 {
     visibility: hidden;
+    float: right;
+
 
 }
 
@@ -49,6 +51,14 @@ p, div {
 {
     border: solid 2px darkmagenta;
 
+}
+#itemDrag
+{
+    border: dotted 2px gray;
+    float: right;
+    width: 10%;
+    margin: 2em;
+    height:3em;
 }
 
 
