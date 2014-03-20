@@ -27,7 +27,7 @@
 
     document.body.appendChild(map);
 
-    var clock = new THREE.Clock(); //this code if from the imported script
+    var clock = new THREE.Clock(); //this code is from the imported script
     var time = clock.getElapsedTime();
     var delta = clock.getDelta() * 1000;
 
@@ -201,7 +201,7 @@
         var column = (map.width - player.x) /tileW;
         var row = (map.height - player.y) /tileH;
 
-//        var standing = mapArray[tile.x,tile.y];
+
         document.querySelector('#loc').innerHTML = " x: "+ column +" y: "+ row +"  ";
         document.querySelector('#combatCan').innerHTML ="Stats: "+player.hp+"% || str: "+player.str+" || def:"+player.arm;
 
@@ -212,7 +212,6 @@
         evt = evt || window.event;
         var charCode = evt.keyCode || evt.which;
         var charStr = String.fromCharCode(charCode); //returns keydown as a string.
-//        console.log(charStr);
         var MobPercentage=3;
         var KnightPercentage=2;
         var MermanPercentage=1;
@@ -289,7 +288,7 @@
         ctx.drawImage(object.image, object.x, object.y, object.width, object.height);
     }
 
-    function rect(x, y, width, height, color){
+    function rect(x, y, width, height, color){//player
         this.x = x;
         this.y = y;
         this.width = width;
@@ -407,13 +406,6 @@
 
     }
 
-    function charPanel(){
-
-
-    }
-
-
-charPanel();
 
     function spawnLoot(){
 
@@ -430,12 +422,7 @@ charPanel();
         var randomItem = ~~(Math.random()*loot.length);
 
         var itemID = loot[randomItem][2];
-//        var addingItemID = $("#bagP")
-//            .add("<p id="+randomNumberItem+"><br>")
-//            .draggable()
-//            .css({"visibility":"visible","border":"dotted 2px gray","float":"right","width":"10%","margin":"2em",height:"3em"})
-//            .addClass("."+loot[randomItem][0]+loot[randomItem][3]);
-//        console.log(randomNumberItem);
+
 
         var bagHTML = '<div id="itemDrag'+itemID+'"><p>'+loot[randomItem][1]+'</p></div>';
 
@@ -445,7 +432,7 @@ charPanel();
 //        console.log($(loot[randomItem][0]).uniqueId());
         selectBag.innerHTML += bagHTML;
         var itemPlacement = $('#itemDrag'+itemID);
-        $(itemPlacement).draggable().addClass("itemDrag");
+        $(itemPlacement).draggable().css({"border":"dotted 2px gray","visibility":"visible"});
         $('#bag').css("visibility","visible");
 
 
@@ -453,6 +440,8 @@ charPanel();
         $("#plateDrop").droppable({
             drop: function(event, ui){
                 $(this).addClass("equip").find("p").html(loot[randomItem][1]);
+                $(itemPlacement).draggable("destroy").css("visibility","hidden");//once you drag something in, it will delete
+
 
 
             }
