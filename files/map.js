@@ -426,23 +426,26 @@
         console.log(loot[randomItem][1]+" with an ID of:"+itemID);
 
 
-        //var bagHTML = '<div id="itemDrag'+itemID+'" data-object='+itemID+'" ><p> '+loot[randomItem][1]+'</p></div>';
-        var bagHTML = '<div class="itemDrag" data-object='+itemID+'" ><p> '+loot[randomItem][1]+'</p></div>';
+        //           any item that spawns id will be the item name and the class will be 'itemDrag####' and 'itemDrag'
+        var bagHTML = '<div id="'+loot[randomItem][1]+'" class="itemDrag'+itemID+' itemDrag" data-object='+itemID+'" ><p> '+loot[randomItem][1]+'</p></div>';
 
 
         selectBag.innerHTML += bagHTML;
         var itemPlacement = $('itemDrag'+itemID);
-        $(itemPlacement).css({"border":"dotted 2px gray"}).draggable();
+//        $(itemPlacement).css({"border":"dotted 2px gray","visibility":"visible"}).draggable();
+
 
 
 
 
         $("#plateDrop").droppable({
             drop: function(event, ui){
-                $(this).addClass("equip").find("p").html(loot[randomItem][1]);
-                $(itemPlacement).css("visibility","hidden");//once you drag something in, it will delete
+                $(this).find("p").html(ui.draggable.attr('id')); //this gets the id of the item being dragged and doesnt get confused on what item is being dropped
 
+//                alert(ui.draggable.attr('class') + ' was dropped from ' + ui.draggable.parent().attr('id'));
+//                $( this ).addClass( "ui-state-highlight" );
 
+                $(ui.draggable.removeAttr('itemDrag')).css("visibility","hidden");//once you drag something in, it will delete
 
             }
         });

@@ -28,16 +28,16 @@
           <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="39" column="0" selection-start="1161" selection-end="1161" vertical-scroll-proportion="-17.869566" vertical-offset="174" max-vertical-offset="915">
+                <state line="47" column="0" selection-start="1167" selection-end="1167" vertical-scroll-proportion="-28.304348" vertical-offset="54" max-vertical-offset="795">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="canvas.css" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="canvas.css" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/canvas.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="45" column="2" selection-start="555" selection-end="555" vertical-scroll-proportion="0.38223937" vertical-offset="378" max-vertical-offset="1170">
+                <state line="46" column="1" selection-start="546" selection-end="546" vertical-scroll-proportion="0.44401544" vertical-offset="345" max-vertical-offset="1170">
                   <folding />
                 </state>
               </provider>
@@ -46,10 +46,10 @@
           <file leaf-file-name="map.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/map.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="431" column="0" selection-start="21717" selection-end="21717" vertical-scroll-proportion="0.0" vertical-offset="6016" max-vertical-offset="6915">
+                <state line="431" column="0" selection-start="21765" selection-end="21765" vertical-scroll-proportion="0.0" vertical-offset="6016" max-vertical-offset="6960">
                   <folding>
-                    <marker date="1395420807000" expanded="true" signature="21147:21301" placeholder="//..." />
-                    <marker date="1395420807000" expanded="true" signature="22174:22231" placeholder="//..." />
+                    <marker date="1395433753000" expanded="true" signature="21147:21301" placeholder="//..." />
+                    <marker date="1395433753000" expanded="true" signature="22528:22585" placeholder="//..." />
                   </folding>
                 </state>
               </provider>
@@ -59,10 +59,10 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="map.js" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="map.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/map.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="432" column="39" selection-start="21757" selection-end="21757" vertical-scroll-proportion="0.43062827" vertical-offset="6151" max-vertical-offset="6915">
+                <state line="447" column="43" selection-start="22415" selection-end="22415" vertical-scroll-proportion="0.6662304" vertical-offset="6196" max-vertical-offset="6960">
                   <folding />
                 </state>
               </provider>
@@ -229,10 +229,7 @@
     <entry file="file://$PROJECT_DIR$/map.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="406" column="5" selection-start="20867" selection-end="20867" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6915">
-          <folding>
-            <marker date="1395420807000" expanded="true" signature="21147:21301" placeholder="//..." />
-            <marker date="1395420807000" expanded="true" signature="22174:22231" placeholder="//..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -253,10 +250,7 @@
     <entry file="file://$PROJECT_DIR$/map.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="413" column="25" selection-start="20962" selection-end="20962" vertical-scroll-proportion="0.0" vertical-offset="5956" max-vertical-offset="6720">
-          <folding>
-            <marker date="1395420807000" expanded="true" signature="21147:21301" placeholder="//..." />
-            <marker date="1395420807000" expanded="true" signature="22174:22231" placeholder="//..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -277,33 +271,27 @@
     <entry file="file://$PROJECT_DIR$/map.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="37" column="9" selection-start="867" selection-end="867" vertical-scroll-proportion="0.0" vertical-offset="226" max-vertical-offset="4755">
-          <folding>
-            <marker date="1395420807000" expanded="true" signature="21147:21301" placeholder="//..." />
-            <marker date="1395420807000" expanded="true" signature="22174:22231" placeholder="//..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="0" selection-start="1161" selection-end="1161" vertical-scroll-proportion="-17.869566" vertical-offset="174" max-vertical-offset="915">
+        <state line="47" column="0" selection-start="1167" selection-end="1167" vertical-scroll-proportion="-28.304348" vertical-offset="54" max-vertical-offset="795">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/canvas.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="1" selection-start="546" selection-end="546" vertical-scroll-proportion="0.44401544" vertical-offset="345" max-vertical-offset="1170">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/map.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="431" column="0" selection-start="21717" selection-end="21717" vertical-scroll-proportion="0.0" vertical-offset="6016" max-vertical-offset="6915">
-          <folding>
-            <marker date="1395420807000" expanded="true" signature="21147:21301" placeholder="//..." />
-            <marker date="1395420807000" expanded="true" signature="22174:22231" placeholder="//..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/canvas.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="2" selection-start="555" selection-end="555" vertical-scroll-proportion="0.38223937" vertical-offset="378" max-vertical-offset="1170">
+        <state line="447" column="43" selection-start="22415" selection-end="22415" vertical-scroll-proportion="0.6662304" vertical-offset="6196" max-vertical-offset="6960">
           <folding />
         </state>
       </provider>
