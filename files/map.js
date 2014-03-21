@@ -121,7 +121,7 @@
 
     (function animLoop(){
         requestAnimationFrame(animLoop);
-
+        $('.itemDrag').draggable();
         render();
         update();
     })();
@@ -130,6 +130,7 @@
         ctx.clearRect(0, 0, map.width, map.height);
         drawMap();
         drawRect(player);
+
     }
 
     function drawMap(){
@@ -422,25 +423,24 @@
         var randomItem = ~~(Math.random()*loot.length);
 
         var itemID = loot[randomItem][2];
+        console.log(loot[randomItem][1]+" with an ID of:"+itemID);
 
 
-        var bagHTML = '<div id="itemDrag'+itemID+'"><p>'+loot[randomItem][1]+'</p></div>';
+        //var bagHTML = '<div id="itemDrag'+itemID+'" data-object='+itemID+'" ><p> '+loot[randomItem][1]+'</p></div>';
+        var bagHTML = '<div class="itemDrag" data-object='+itemID+'" ><p> '+loot[randomItem][1]+'</p></div>';
 
-//        $(loot[randomItem][0]).uniqueId().draggable().css({"visibility":"hidden","border":"dotted 2px gray","float":"right","width":"10%","margin":"2em",height:"3em"});
-//        $(loot[randomItem][0]).uniqueId().draggable().css("visibility","visible");
-//        $(loot[randomItem][0]).removeUniqueId().draggable().css("visibility","visible");
-//        console.log($(loot[randomItem][0]).uniqueId());
+
         selectBag.innerHTML += bagHTML;
-        var itemPlacement = $('#itemDrag'+itemID);
-        $(itemPlacement).draggable().css({"border":"dotted 2px gray","visibility":"visible"});
-        $('#bag').css("visibility","visible");
+        var itemPlacement = $('itemDrag'+itemID);
+        $(itemPlacement).css({"border":"dotted 2px gray"}).draggable();
+
 
 
 
         $("#plateDrop").droppable({
             drop: function(event, ui){
                 $(this).addClass("equip").find("p").html(loot[randomItem][1]);
-                $(itemPlacement).draggable("destroy").css("visibility","hidden");//once you drag something in, it will delete
+                $(itemPlacement).css("visibility","hidden");//once you drag something in, it will delete
 
 
 

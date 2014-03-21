@@ -12,7 +12,7 @@ p, div {
 }
 #bag
 {
-    visibility: hidden;
+    visibility: visible;
     float: right;
 
 
@@ -52,14 +52,21 @@ p, div {
     border: solid 2px darkmagenta;
 
 }
-#itemDrag
+.itemDrag
 {
+    visibility: visible;
     border: dotted 2px gray;
     float: right;
-    width: 10%;
     margin: 2em;
     height:3em;
-}
 
+}
+/*[draggable=true]{*/
+    /*border: dotted 2px darkred;*/
+    /*float: right;*/
+    /*width: 10%;*/
+    /*margin: 2em;*/
+    /*height:3em;*/
+/*}*/
 
 
