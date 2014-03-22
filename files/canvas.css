@@ -13,12 +13,13 @@ p, div {
 #bag
 {
 
-    float: right;
+    /*float: right;*/
+    position: relative;
 
 
 }
 
-#plateDrop
+#itemDrop
 {
     border: solid 2px gray;
     float:right;
@@ -29,7 +30,7 @@ p, div {
 
 
 
-#weaponDrop
+#characterSheet
 {
     border: solid 2px gray;
     clear:both;

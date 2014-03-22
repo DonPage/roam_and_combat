@@ -25,6 +25,8 @@
     map.width = 500;
     map.height = 500;
 
+
+
     document.body.appendChild(map);
 
     var clock = new THREE.Clock(); //this code is from the imported script
@@ -38,7 +40,6 @@
 
         //loot IDs
     var Armor = 1;
-
 
     var inCombat = false;
 //  going to try to put this code in the object player.
@@ -414,9 +415,15 @@
         var loot =
             [
                 //CSS          name  ID  stats
+
+                //Tier1 :
                 [".plateDrag","ChestPlate of Bronze", randomNumberItem , 0.8],
                 [".shieldDrag","Shield of the Outlands",randomNumberItem,0.5],
-                [".weaponDrag","Sword of the Starter",randomNumberItem,2.5]
+                [".weaponDrag","Sword of the Starter",randomNumberItem,0.5],
+                //
+                [".plateDrag","ChestPlate of Wanderer", randomNumberItem , 0.8],
+                [".shieldDrag","Shield of the Traveler",randomNumberItem,0.5],
+                [".weaponDrag","Wooden Sword of the Monk",randomNumberItem,0.4]
 
             ];
 
@@ -432,25 +439,16 @@
 
         selectBag.innerHTML += bagHTML;
         var itemPlacement = $('itemDrag'+itemID);
-//        $(itemPlacement).css({"border":"dotted 2px gray","visibility":"visible"}).draggable();
 
 
-
-
-
-        $("#plateDrop").droppable({
+        $("#itemDrop").droppable({
             drop: function(event, ui){
                 $(this).find("p").html(ui.draggable.attr('id')); //this gets the id of the item being dragged and doesnt get confused on what item is being dropped
-
-//                alert(ui.draggable.attr('class') + ' was dropped from ' + ui.draggable.parent().attr('id'));
-//                $( this ).addClass( "ui-state-highlight" );
 
                 $(ui.draggable.removeAttr('itemDrag')).css("visibility","hidden");//once you drag something in, it will delete
 
             }
         });
-//        randomItem = '';
-//        randomNumberItem = '';
 
     }
 
