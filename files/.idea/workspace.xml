@@ -25,10 +25,10 @@
     <splitter split-orientation="horizontal" split-proportion="0.34861112">
       <split-first>
         <leaf>
-          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="26" column="30" selection-start="835" selection-end="835" vertical-scroll-proportion="0.46558705" vertical-offset="45" max-vertical-offset="870">
+                <state line="7" column="6" selection-start="168" selection-end="168" vertical-scroll-proportion="0.08097166" vertical-offset="45" max-vertical-offset="870">
                   <folding />
                 </state>
               </provider>
@@ -46,9 +46,9 @@
           <file leaf-file-name="map.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/map.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="436" column="0" selection-start="21972" selection-end="21972" vertical-scroll-proportion="0.0" vertical-offset="5956" max-vertical-offset="7110">
+                <state line="437" column="0" selection-start="22008" selection-end="22008" vertical-scroll-proportion="0.0" vertical-offset="5971" max-vertical-offset="7080">
                   <folding>
-                    <marker date="1395503539000" expanded="true" signature="21324:21468" placeholder="//..." />
+                    <marker date="1395682894000" expanded="true" signature="21339:21490" placeholder="//..." />
                   </folding>
                 </state>
               </provider>
@@ -58,12 +58,12 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="map.js" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="map.js" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/map.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="21" column="51" selection-start="584" selection-end="584" vertical-scroll-proportion="0.41230366" vertical-offset="0" max-vertical-offset="7110">
+                <state line="373" column="41" selection-start="20075" selection-end="20075" vertical-scroll-proportion="0.19502617" vertical-offset="5446" max-vertical-offset="7080">
                   <folding>
-                    <marker date="1395503539000" expanded="true" signature="21324:21468" placeholder="//..." />
+                    <marker date="1395682894000" expanded="true" signature="21339:21490" placeholder="//..." />
                   </folding>
                 </state>
               </provider>
@@ -231,7 +231,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="437" column="0" selection-start="21973" selection-end="21973" vertical-scroll-proportion="0.0" vertical-offset="6372" max-vertical-offset="7110">
           <folding>
-            <marker date="1395503539000" expanded="true" signature="21324:21468" placeholder="//..." />
+            <marker date="1395682894000" expanded="true" signature="21339:21490" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -254,7 +254,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="416" column="46" selection-start="21068" selection-end="21068" vertical-scroll-proportion="0.0" vertical-offset="6240" max-vertical-offset="6930">
           <folding>
-            <marker date="1395503539000" expanded="true" signature="21324:21468" placeholder="//..." />
+            <marker date="1395682894000" expanded="true" signature="21339:21490" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -277,7 +277,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="406" column="5" selection-start="20867" selection-end="20867" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6915">
           <folding>
-            <marker date="1395503539000" expanded="true" signature="21324:21468" placeholder="//..." />
+            <marker date="1395682894000" expanded="true" signature="21339:21490" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -300,7 +300,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="413" column="25" selection-start="20962" selection-end="20962" vertical-scroll-proportion="0.0" vertical-offset="5956" max-vertical-offset="6720">
           <folding>
-            <marker date="1395503539000" expanded="true" signature="21324:21468" placeholder="//..." />
+            <marker date="1395682894000" expanded="true" signature="21339:21490" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -323,7 +323,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="37" column="9" selection-start="867" selection-end="867" vertical-scroll-proportion="0.0" vertical-offset="226" max-vertical-offset="4755">
           <folding>
-            <marker date="1395503539000" expanded="true" signature="21324:21468" placeholder="//..." />
+            <marker date="1395682894000" expanded="true" signature="21339:21490" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -335,19 +335,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/map.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="30" selection-start="835" selection-end="835" vertical-scroll-proportion="0.46558705" vertical-offset="45" max-vertical-offset="870">
-          <folding />
+        <state line="437" column="0" selection-start="22008" selection-end="22008" vertical-scroll-proportion="0.0" vertical-offset="5971" max-vertical-offset="7080">
+          <folding>
+            <marker date="1395682894000" expanded="true" signature="21339:21490" placeholder="//..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/map.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="51" selection-start="584" selection-end="584" vertical-scroll-proportion="0.41230366" vertical-offset="0" max-vertical-offset="7110">
-          <folding>
-            <marker date="1395503539000" expanded="true" signature="21324:21468" placeholder="//..." />
-          </folding>
+        <state line="7" column="6" selection-start="168" selection-end="168" vertical-scroll-proportion="0.08097166" vertical-offset="45" max-vertical-offset="870">
+          <folding />
         </state>
       </provider>
     </entry>

@@ -415,44 +415,42 @@
         var randomNumberItem = ~~(Math.random()*6000);
         var loot =
             [
-                //type          name                ID              stats
+                //type          name                ID              OffStats DefStats
 
                 //Tier1 :
-                ["plate","ChestPlate of Bronze", randomNumberItem , 0.8],
-                ["shield","Shield of the Outlands",randomNumberItem,0.5],
-                ["weapon","Sword of the Starter",randomNumberItem,0.5],
+                ["plate","ChestPlate of Bronze", randomNumberItem , 0, 0.8],
+                ["shield","Shield of the Outlands",randomNumberItem, 0,0.5],
+                ["weapon","Sword of the Starter",randomNumberItem, 0.5, 0],
                 //
-                ["plate","ChestPlate of Wanderer", randomNumberItem , 0.8],
-                ["shield","Shield of the Traveler",randomNumberItem,0.5],
-                ["weapon","Wooden Sword of the Monk",randomNumberItem,0.4]
+                ["plate","ChestPlate of Wanderer", randomNumberItem , 0, 0.8],
+                ["shield","Shield of the Traveler",randomNumberItem, 0, 0.5],
+                ["weapon","Wooden Sword of the Monk",randomNumberItem, 0.4, 0]
 
             ];
+
 
         var randomItem = ~~(Math.random()*loot.length);
         var itemType = loot[randomItem][0];
         console.log(itemType);
 
         var itemID = loot[randomItem][2];
-        console.log(loot[randomItem][1]+" with an ID of:"+itemID);
+//        console.log(loot[randomItem][1]+" with an ID of:"+itemID);
 
 
         //           any item that spawns id will be the item name and the class will be 'itemDrag####' and 'itemDrag'
         var bagHTML = '<div id="'+loot[randomItem][1]+'" class="itemDrag'+itemID+' itemDrag" data-object='+itemType+'" ><p> '+loot[randomItem][1]+'</p></div>';
 
 
+
         selectBag.innerHTML += bagHTML;
         var itemPlacement = $('itemDrag'+itemID);
-
+        console.log("Item Type: ");
 
         $("#itemDrop").droppable({
             drop: function(event, ui){
                 if (ui.draggable)
-
-
-
                 $(this).find("p").html(ui.draggable.attr('id')); //this gets the id of the item being dragged and doesnt get confused on what item is being dropped
                 $(ui.draggable.removeAttr('itemDrag')).css("visibility","hidden");//once you drag something in, it will delete
-
             }
         });
 
