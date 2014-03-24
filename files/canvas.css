@@ -37,9 +37,9 @@ p, div {
     float:right;
     width: 10%;
     margin: 2em;
-    height: 3em;
+    height: 15em;
 }
-#shieldDrop
+#trashDrop
 {
     border: solid 2px gray;
     clear:both;

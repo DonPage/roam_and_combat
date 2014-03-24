@@ -205,7 +205,8 @@
 
 
         document.querySelector('#loc').innerHTML = " x: "+ column +" y: "+ row +"  ";
-        document.querySelector('#combatCan').innerHTML ="Stats: "+player.hp+"% || str: "+player.str+" || def:"+player.arm;
+//        document.querySelector('#combatCan').innerHTML ="Stats: "+player.hp+"% || str: "+player.str+" || def:"+player.arm;
+        document.querySelector('#charStats').innerHTML = "Stats: "+player.hp+"% || str: "+player.str+" || def: "+player.arm;
 
         wallIsct(player);
     }
@@ -414,27 +415,29 @@
         var randomNumberItem = ~~(Math.random()*6000);
         var loot =
             [
-                //CSS          name  ID  stats
+                //type          name                ID              stats
 
                 //Tier1 :
-                [".plateDrag","ChestPlate of Bronze", randomNumberItem , 0.8],
-                [".shieldDrag","Shield of the Outlands",randomNumberItem,0.5],
-                [".weaponDrag","Sword of the Starter",randomNumberItem,0.5],
+                ["plate","ChestPlate of Bronze", randomNumberItem , 0.8],
+                ["shield","Shield of the Outlands",randomNumberItem,0.5],
+                ["weapon","Sword of the Starter",randomNumberItem,0.5],
                 //
-                [".plateDrag","ChestPlate of Wanderer", randomNumberItem , 0.8],
-                [".shieldDrag","Shield of the Traveler",randomNumberItem,0.5],
-                [".weaponDrag","Wooden Sword of the Monk",randomNumberItem,0.4]
+                ["plate","ChestPlate of Wanderer", randomNumberItem , 0.8],
+                ["shield","Shield of the Traveler",randomNumberItem,0.5],
+                ["weapon","Wooden Sword of the Monk",randomNumberItem,0.4]
 
             ];
 
         var randomItem = ~~(Math.random()*loot.length);
+        var itemType = loot[randomItem][0];
+        console.log(itemType);
 
         var itemID = loot[randomItem][2];
         console.log(loot[randomItem][1]+" with an ID of:"+itemID);
 
 
         //           any item that spawns id will be the item name and the class will be 'itemDrag####' and 'itemDrag'
-        var bagHTML = '<div id="'+loot[randomItem][1]+'" class="itemDrag'+itemID+' itemDrag" data-object='+itemID+'" ><p> '+loot[randomItem][1]+'</p></div>';
+        var bagHTML = '<div id="'+loot[randomItem][1]+'" class="itemDrag'+itemID+' itemDrag" data-object='+itemType+'" ><p> '+loot[randomItem][1]+'</p></div>';
 
 
         selectBag.innerHTML += bagHTML;
@@ -443,12 +446,21 @@
 
         $("#itemDrop").droppable({
             drop: function(event, ui){
-                $(this).find("p").html(ui.draggable.attr('id')); //this gets the id of the item being dragged and doesnt get confused on what item is being dropped
+                if (ui.draggable)
 
+
+
+                $(this).find("p").html(ui.draggable.attr('id')); //this gets the id of the item being dragged and doesnt get confused on what item is being dropped
                 $(ui.draggable.removeAttr('itemDrag')).css("visibility","hidden");//once you drag something in, it will delete
 
             }
         });
+
+        $("#trashDrop").droppable({
+            drop: function(event, ui){
+                $(ui.draggable.removeAttr('itemDrag')).css("visibility","hidden");
+            }
+        })
 
     }
 
