@@ -25,7 +25,8 @@
     map.width = 500;
     map.height = 500;
 
-
+    var d_height = $(document).height();
+    var d_width = $(document).width();
 
     document.body.appendChild(map);
 
@@ -125,6 +126,8 @@
         $('.itemDrag').draggable();
         render();
         update();
+
+
     })();
 
     function render(){
@@ -206,9 +209,19 @@
 
         document.querySelector('#loc').innerHTML = " x: "+ column +" y: "+ row +"  ";
 //        document.querySelector('#combatCan').innerHTML ="Stats: "+player.hp+"% || str: "+player.str+" || def:"+player.arm;
-        document.querySelector('#charStats').innerHTML = "Stats: "+player.hp+"% || str: "+player.str+" || def: "+player.arm;
-
+//        document.querySelector('#charStats').innerHTML = "Stats: "+player.hp+"% || str: "+player.str+" || def: "+player.arm+" BAG: "+player.bag+"/4";
+        document.querySelector('#charStats').innerHTML = '<span id=greenHP>Health: '+player.hp+'% </span>'+'<span id=yellow>Str: '+player.str+' </span>'+'<span id=blue>Def: '+player.arm+' </span>'+'<span id=greenBag>Bag: '+player.bag+'/4 </span>';
+        checkPlayerValues();
         wallIsct(player);
+    }
+
+    function checkPlayerValues(){
+        if (player.bag >= 4){
+            document.querySelector('#greenBag').innerHTML = '<span id=redBag> BAG: '+player.bag+'/4</span>';
+        }
+        if (player.hp < 500){
+            document.querySelector('#greenHP').innerHTML = '<span id=redHP>Health: '+player.hp+'% </span>';
+        }
     }
 
     document.onkeydown = function(evt){
@@ -301,8 +314,9 @@
         this.plate = 0;
         this.shield = 0;
         this.hp = 3000;
-        this.str = 3; //Math.floor(Math.random() * (5 - 4 +1)) +4;
-        this.arm = 3;//Math.floor(Math.random() * (2 - 1 +1)) +1;
+        this.str = 3 * player.weapon; //Math.floor(Math.random() * (5 - 4 +1)) +4;
+        this.arm = 3 + player.plate + player.shield;//Math.floor(Math.random() * (2 - 1 +1)) +1;
+        this.bag = 0;
 
     }
 
@@ -386,10 +400,13 @@
                     death();
                 }
                 if (currentMobHealth < currentPlayerHealth && currentPlayerHealth > 0){
-                    spawnLoot();
+                    if(player.bag >= 4){
+                        console.log("you are out of bag space");
+                    } else{
+                        console.log("you win");
+                        spawnLoot();
 
-
-                    console.log("you win");
+                    }
 
                 }
                 else if (currentMobHealth < currentPlayerHealth && currentPlayerHealth < 0){
@@ -411,19 +428,19 @@
 
 
     function spawnLoot(){
-
+        player.bag += 1;
         var randomNumberItem = ~~(Math.random()*6000);
         var loot =
             [
                 //type          name                ID              OffStats DefStats
 
                 //Tier1 :
-                ["plate","ChestPlate of Bronze", randomNumberItem , 0, 0.8],
-                ["shield","Shield of the Outlands",randomNumberItem, 0,0.5],
-                ["weapon","Sword of the Starter",randomNumberItem, 0.5, 0],
+                ["plate","ChestPlate of Bronze", randomNumberItem , 0, 1.8],
+                ["shield","Shield of the Outlands",randomNumberItem, 0,1.5],
+                ["weapon","Sword of the Starter",randomNumberItem, 1.5, 0],
                 //
-                ["plate","ChestPlate of Wanderer", randomNumberItem , 0, 0.8],
-                ["shield","Shield of the Traveler",randomNumberItem, 0, 0.5],
+                ["plate","ChestPlate of Wanderer", randomNumberItem , 0, 1.8],
+                ["shield","Shield of the Traveler",randomNumberItem, 0, 1.5],
                 ["weapon","Wooden Sword of the Monk",randomNumberItem, 0.4, 0]
 
             ];
@@ -431,32 +448,44 @@
 
         var randomItem = ~~(Math.random()*loot.length);
         var itemType = loot[randomItem][0];
+        var OffStats = loot[randomItem][3];
+        var DefStats = loot[randomItem][4];
         console.log(itemType);
+
+        function randomNumberTop () {
+            return ~~(Math.random() * (-169 - 23 + 1)) + 23;
+        }
+        function randomNumberLeft () {
+            return ~~(Math.random() * (-196 - 64 + 1)) + 64;
+        }
 
         var itemID = loot[randomItem][2];
 //        console.log(loot[randomItem][1]+" with an ID of:"+itemID);
 
-
         //           any item that spawns id will be the item name and the class will be 'itemDrag####' and 'itemDrag'
-        var bagHTML = '<div id="'+loot[randomItem][1]+'" class="itemDrag'+itemID+' itemDrag" data-object='+itemType+'" ><p> '+loot[randomItem][1]+'</p></div>';
-
+      //  var bagHTML = '<div id='+loot[randomItem][1]+' class=itemDrag'+itemID+' itemDrag data-object='+[loot[randomItem][3],loot[randomItem][4]]+'" ><p> '+loot[randomItem][1]+'</p></div>';
+        var bagHTML = '<span id="'+loot[randomItem][1]+'" class="itemDrag'+itemID+' itemDrag" data-object='+itemType+'" style="left:'+ randomNumberTop()+'px; top:'+ randomNumberLeft()+'px;" ><p> '+loot[randomItem][1]+'</p> </span>';
+        console.log(bagHTML);
 
 
         selectBag.innerHTML += bagHTML;
         var itemPlacement = $('itemDrag'+itemID);
-        console.log("Item Type: ");
 
         $("#itemDrop").droppable({
             drop: function(event, ui){
                 if (ui.draggable)
                 $(this).find("p").html(ui.draggable.attr('id')); //this gets the id of the item being dragged and doesnt get confused on what item is being dropped
                 $(ui.draggable.removeAttr('itemDrag')).css("visibility","hidden");//once you drag something in, it will delete
+                $(ui.draggable.remove()); //this removes the item from the DOM.
+                player.bag -= 1;
             }
         });
 
         $("#trashDrop").droppable({
             drop: function(event, ui){
                 $(ui.draggable.removeAttr('itemDrag')).css("visibility","hidden");
+                $(ui.draggable.remove()); //this removes the item from the DOM.
+                player.bag -= 1;
             }
         })
 

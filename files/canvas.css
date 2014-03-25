@@ -5,18 +5,29 @@ p, div {
     -moz-user-select: -moz-none;
     -o-user-select: none;
 }
-.body
+
+@import url(http://fonts.googleapis.com/css?family=Nova+Flat);
+
+body
 {
-    float:left;
-    width: 90%;
+    /*float:left;*/
+    background-image: url(images/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
 }
+
+#about
+{
+    font-family: 'Nova Flat', cursive;
+    color: white;
+}
+
 #bag
 {
 
     /*float: right;*/
     position: relative;
-
-
 }
 
 #itemDrop
@@ -26,6 +37,8 @@ p, div {
     width: 10%;
     margin: 2em;
     height: 3em;
+    font-family: helvetica, arial;
+    color: lightgrey;
 }
 
 
@@ -38,7 +51,11 @@ p, div {
     width: 10%;
     margin: 2em;
     height: 15em;
+    font-family: helvetica, arial;
+    font-size: .9em;
+    color: lightgrey;
 }
+
 #trashDrop
 {
     border: solid 2px gray;
@@ -48,11 +65,13 @@ p, div {
     margin: 2em;
     height: 3em;
 }
+
 .equip
 {
     border: solid 2px darkmagenta;
 
 }
+
 .itemDrag
 {
     visibility: visible;
@@ -62,6 +81,34 @@ p, div {
     height:3em;
 
 }
+
+#redBag
+{
+    color: red;
+}
+#greenBag
+{
+    color: green;
+}
+#greenHP
+{
+    color: green;
+}
+#redHP
+{
+    color: red;
+}
+
+#yellow
+{
+    color: yellow;
+}
+
+#blue
+{
+    color: cornflowerblue;
+}
+
 /*[draggable=true]{*/
     /*border: dotted 2px darkred;*/
     /*float: right;*/
