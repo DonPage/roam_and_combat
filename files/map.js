@@ -435,13 +435,13 @@
                 //type          name                ID              OffStats DefStats
 
                 //Tier1 :
-                ["plate","ChestPlate of Bronze", randomNumberItem , 0, 1.8],
-                ["shield","Shield of the Outlands",randomNumberItem, 0,1.5],
-                ["weapon","Sword of the Starter",randomNumberItem, 1.5, 0],
+                ["plate","ChestPlate of Bronze", randomNumberItem , 0, 1],
+                ["shield","Shield of the Outlands",randomNumberItem, 0,2],
+                ["weapon","Sword of the Starter",randomNumberItem, 1, 0],
                 //
-                ["plate","ChestPlate of Wanderer", randomNumberItem , 0, 1.8],
-                ["shield","Shield of the Traveler",randomNumberItem, 0, 1.5],
-                ["weapon","Wooden Sword of the Monk",randomNumberItem, 0.4, 0]
+                ["plate","ChestPlate of Wanderer", randomNumberItem , 0, 1],
+                ["shield","Shield of the Traveler",randomNumberItem, 0, 1],
+                ["weapon","Wooden Sword of the Monk",randomNumberItem, 1, 0]
 
             ];
 
@@ -466,7 +466,7 @@
 //        var bagHTML = '<span id='+loot[randomItem][1]+' class=itemDrag'+itemID+' itemDrag data-object='+[loot[randomItem][3],loot[randomItem][4]]+'" ><p> '+loot[randomItem][1]+'</p></span>';
 //        var bagHTML = '<span id="'+loot[randomItem][1]+'"class="itemDrag'+itemID+' itemDrag'+'" data-object="'+ [OffStats,DefStats]+
 //                      '><p style="left:'+ randomNumberTop()+'px; '+ 'top:'+ randomNumberLeft()+'px; ">'+loot[randomItem][1]+'</p> </span>';
-        var bagHTML = '<span id="'+loot[randomItem][1]+'"class="itemDrag'+itemID+' itemDrag" data-object="'+ [OffStats,DefStats]+'">' +
+        var bagHTML = '<span id="'+loot[randomItem][1]+'"class="itemDrag'+itemID+' itemDrag" data-object="'+ [OffStats, DefStats]+'">' +
             '<p style="left:'+ randomNumberTop()+'px; top:'+ randomNumberLeft()+'px;"> '+loot[randomItem][1]+'</p> </span>';
         console.log(bagHTML);
 
@@ -477,11 +477,23 @@
         $("#itemDrop").droppable({
             drop: function(event, ui){
                 $(this).find("p").html(ui.draggable.attr('id')); //this gets the id of the item being dragged and doesnt get confused on what item is being dropped
-                var findingItemStatsInHTML = $(ui.draggable.attr('data-object'));
-                console.log(findingItemStatsInHTML);
+                var findingItemStatsInHTML = $(ui.draggable.attr('data-object')).selector;
+                console.log("Off "+findingItemStatsInHTML[0],"Def "+findingItemStatsInHTML[2],"No sub "+findingItemStatsInHTML);
+
                 $(ui.draggable.removeAttr('itemDrag')).css("visibility","hidden");//once you drag something in, it will delete
                 $(ui.draggable.remove()); //this removes the item from the DOM.
                 player.bag -= 1;
+                if (findingItemStatsInHTML[0] >= findingItemStatsInHTML[1]){
+                    console.log("this is a sword");
+                    player.weapon = findingItemStatsInHTML[0];
+                } else {
+                    console.log("this is a plate armor");
+                    return player.plate = findingItemStatsInHTML[1];
+
+                }
+
+                console.log(player.weapon);
+                console.log(player.plate);
             }
         });
 
