@@ -314,8 +314,8 @@
         this.plate = 0;
         this.shield = 0;
         this.hp = 3000;
-        this.str = 3 * player.weapon; //Math.floor(Math.random() * (5 - 4 +1)) +4;
-        this.arm = 3 + player.plate + player.shield;//Math.floor(Math.random() * (2 - 1 +1)) +1;
+        this.str = 3 + this.weapon; //Math.floor(Math.random() * (5 - 4 +1)) +4;
+        this.arm = 3 + this.plate + this.shield;//Math.floor(Math.random() * (2 - 1 +1)) +1;
         this.bag = 0;
 
     }
@@ -464,7 +464,9 @@
 
         //           any item that spawns id will be the item name and the class will be 'itemDrag####' and 'itemDrag'
       //  var bagHTML = '<div id='+loot[randomItem][1]+' class=itemDrag'+itemID+' itemDrag data-object='+[loot[randomItem][3],loot[randomItem][4]]+'" ><p> '+loot[randomItem][1]+'</p></div>';
-        var bagHTML = '<span id="'+loot[randomItem][1]+'" class="itemDrag'+itemID+' itemDrag" data-object='+itemType+'" style="left:'+ randomNumberTop()+'px; top:'+ randomNumberLeft()+'px;" ><p> '+loot[randomItem][1]+'</p> </span>';
+        var bagHTML = '<span id="'+loot[randomItem][1]+'"class="itemDrag'+itemID+' itemDrag" data-object="'+ [OffStats,DefStats]+'  >"' +
+                      '<p style="left:'+ randomNumberTop()+'px; top:'+ randomNumberLeft()+'px;"> '+loot[randomItem][1]+'</p> </span>';
+
         console.log(bagHTML);
 
 
@@ -473,8 +475,9 @@
 
         $("#itemDrop").droppable({
             drop: function(event, ui){
-                if (ui.draggable)
                 $(this).find("p").html(ui.draggable.attr('id')); //this gets the id of the item being dragged and doesnt get confused on what item is being dropped
+                var findingItemStatsInHTML = $(ui.draggable.attr('data-object'));
+                console.log(findingItemStatsInHTML.value);
                 $(ui.draggable.removeAttr('itemDrag')).css("visibility","hidden");//once you drag something in, it will delete
                 $(ui.draggable.remove()); //this removes the item from the DOM.
                 player.bag -= 1;
