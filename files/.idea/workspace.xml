@@ -28,7 +28,7 @@
           <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="16" column="26" selection-start="583" selection-end="583" vertical-scroll-proportion="0.30364373" vertical-offset="15" max-vertical-offset="870">
+                <state line="16" column="26" selection-start="583" selection-end="583" vertical-scroll-proportion="0.32388663" vertical-offset="0" max-vertical-offset="870">
                   <folding />
                 </state>
               </provider>
@@ -37,7 +37,7 @@
           <file leaf-file-name="canvas.css" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/canvas.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="98" column="15" selection-start="1258" selection-end="1258" vertical-scroll-proportion="-20.307692" vertical-offset="942" max-vertical-offset="1890">
+                <state line="98" column="15" selection-start="1258" selection-end="1258" vertical-scroll-proportion="0.0" vertical-offset="942" max-vertical-offset="1890">
                   <folding />
                 </state>
               </provider>
@@ -46,9 +46,9 @@
           <file leaf-file-name="map.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/map.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="463" column="0" selection-start="23276" selection-end="23276" vertical-scroll-proportion="0.0" vertical-offset="6361" max-vertical-offset="7755">
+                <state line="463" column="0" selection-start="23262" selection-end="23262" vertical-scroll-proportion="0.0" vertical-offset="6361" max-vertical-offset="7905">
                   <folding>
-                    <marker date="1395724826000" expanded="true" signature="22309:22456" placeholder="//..." />
+                    <marker date="1395757238000" expanded="true" signature="22295:22442" placeholder="//..." />
                   </folding>
                 </state>
               </provider>
@@ -61,10 +61,9 @@
           <file leaf-file-name="map.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/map.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="492" column="17" selection-start="25312" selection-end="25312" vertical-scroll-proportion="0.68586385" vertical-offset="6856" max-vertical-offset="7755">
+                <state line="318" column="21" selection-start="18483" selection-end="18483" vertical-scroll-proportion="0.5091623" vertical-offset="4381" max-vertical-offset="7905">
                   <folding>
-                    <marker date="1395724826000" expanded="true" signature="23760:23765" placeholder="..." />
-                    <marker date="1395724826000" expanded="true" signature="24026:24031" placeholder="..." />
+                    <marker date="1395757238000" expanded="false" signature="24012:24017" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -127,14 +126,6 @@
     <property name="FullScreen" value="false" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -145,15 +136,23 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
       <setting name="configLocationType" value="CONFIG_FILE" />
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="CHROME" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
@@ -190,11 +189,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -216,6 +215,29 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="6" selection-start="64" selection-end="64" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/canvas.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="15" selection-start="1258" selection-end="1258" vertical-scroll-proportion="0.0" vertical-offset="942" max-vertical-offset="1890">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="492" column="17" selection-start="25312" selection-end="25312" vertical-scroll-proportion="0.0" vertical-offset="7380" max-vertical-offset="7755">
+          <folding>
+            <marker date="1395757238000" expanded="false" signature="24012:24017" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="6" selection-start="168" selection-end="168" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
           <folding />
         </state>
@@ -232,8 +254,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="373" column="41" selection-start="20075" selection-end="20075" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7080">
           <folding>
-            <marker date="1395724826000" expanded="true" signature="23760:23765" placeholder="..." />
-            <marker date="1395724826000" expanded="true" signature="24026:24031" placeholder="..." />
+            <marker date="1395757238000" expanded="false" signature="24012:24017" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -256,8 +277,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="437" column="0" selection-start="21973" selection-end="21973" vertical-scroll-proportion="0.0" vertical-offset="6372" max-vertical-offset="7110">
           <folding>
-            <marker date="1395724826000" expanded="true" signature="23760:23765" placeholder="..." />
-            <marker date="1395724826000" expanded="true" signature="24026:24031" placeholder="..." />
+            <marker date="1395757238000" expanded="false" signature="24012:24017" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -280,8 +300,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="416" column="46" selection-start="21068" selection-end="21068" vertical-scroll-proportion="0.0" vertical-offset="6240" max-vertical-offset="6930">
           <folding>
-            <marker date="1395724826000" expanded="true" signature="23760:23765" placeholder="..." />
-            <marker date="1395724826000" expanded="true" signature="24026:24031" placeholder="..." />
+            <marker date="1395757238000" expanded="false" signature="24012:24017" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -304,8 +323,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="406" column="5" selection-start="20867" selection-end="20867" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6915">
           <folding>
-            <marker date="1395724826000" expanded="true" signature="23760:23765" placeholder="..." />
-            <marker date="1395724826000" expanded="true" signature="24026:24031" placeholder="..." />
+            <marker date="1395757238000" expanded="false" signature="24012:24017" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -328,8 +346,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="413" column="25" selection-start="20962" selection-end="20962" vertical-scroll-proportion="0.0" vertical-offset="5956" max-vertical-offset="6720">
           <folding>
-            <marker date="1395724826000" expanded="true" signature="23760:23765" placeholder="..." />
-            <marker date="1395724826000" expanded="true" signature="24026:24031" placeholder="..." />
+            <marker date="1395757238000" expanded="false" signature="24012:24017" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -352,32 +369,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="37" column="9" selection-start="867" selection-end="867" vertical-scroll-proportion="0.0" vertical-offset="226" max-vertical-offset="4755">
           <folding>
-            <marker date="1395724826000" expanded="true" signature="23760:23765" placeholder="..." />
-            <marker date="1395724826000" expanded="true" signature="24026:24031" placeholder="..." />
+            <marker date="1395757238000" expanded="false" signature="24012:24017" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/canvas.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="15" selection-start="1258" selection-end="1258" vertical-scroll-proportion="-20.307692" vertical-offset="942" max-vertical-offset="1890">
+        <state line="98" column="15" selection-start="1258" selection-end="1258" vertical-scroll-proportion="0.0" vertical-offset="942" max-vertical-offset="1890">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="26" selection-start="583" selection-end="583" vertical-scroll-proportion="0.30364373" vertical-offset="15" max-vertical-offset="870">
+        <state line="16" column="26" selection-start="583" selection-end="583" vertical-scroll-proportion="0.32388663" vertical-offset="0" max-vertical-offset="870">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/map.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="492" column="17" selection-start="25312" selection-end="25312" vertical-scroll-proportion="0.68586385" vertical-offset="6856" max-vertical-offset="7755">
+        <state line="318" column="21" selection-start="18483" selection-end="18483" vertical-scroll-proportion="0.5091623" vertical-offset="4381" max-vertical-offset="7905">
           <folding>
-            <marker date="1395724826000" expanded="true" signature="23760:23765" placeholder="..." />
-            <marker date="1395724826000" expanded="true" signature="24026:24031" placeholder="..." />
+            <marker date="1395757238000" expanded="false" signature="24012:24017" placeholder="..." />
           </folding>
         </state>
       </provider>

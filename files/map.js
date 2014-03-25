@@ -315,7 +315,7 @@
         this.shield = 0;
         this.hp = 3000;
         this.str = 3 + this.weapon; //Math.floor(Math.random() * (5 - 4 +1)) +4;
-        this.arm = 3 + this.plate + this.shield;//Math.floor(Math.random() * (2 - 1 +1)) +1;
+        this.arm = 3 + this.plate;//Math.floor(Math.random() * (2 - 1 +1)) +1;
         this.bag = 0;
 
     }
@@ -435,13 +435,13 @@
                 //type          name                ID              OffStats DefStats
 
                 //Tier1 :
-                ["plate","ChestPlate of Bronze", randomNumberItem , 0, 1],
+                ["plate","ChestPlate of Bronze", randomNumberItem , 0, 2],
                 ["shield","Shield of the Outlands",randomNumberItem, 0,2],
-                ["weapon","Sword of the Starter",randomNumberItem, 1, 0],
+                ["weapon","Sword of the Starter",randomNumberItem, 2, 0],
                 //
-                ["plate","ChestPlate of Wanderer", randomNumberItem , 0, 1],
-                ["shield","Shield of the Traveler",randomNumberItem, 0, 1],
-                ["weapon","Wooden Sword of the Monk",randomNumberItem, 1, 0]
+                ["plate","ChestPlate of Wanderer", randomNumberItem , 0, 2],
+                ["shield","Shield of the Traveler",randomNumberItem, 0, 2],
+                ["weapon","Wooden Sword of the Monk",randomNumberItem, 2, 0]
 
             ];
 
@@ -479,21 +479,31 @@
                 $(this).find("p").html(ui.draggable.attr('id')); //this gets the id of the item being dragged and doesnt get confused on what item is being dropped
                 var findingItemStatsInHTML = $(ui.draggable.attr('data-object')).selector;
                 console.log("Off "+findingItemStatsInHTML[0],"Def "+findingItemStatsInHTML[2],"No sub "+findingItemStatsInHTML);
+                var splitComma = findingItemStatsInHTML.split(',');
+                console.log(splitComma);
+                var defStats = parseFloat(splitComma[1]);
+                var offStats = parseFloat(splitComma[0]);
 
+                checkWeaponorArmor();
                 $(ui.draggable.removeAttr('itemDrag')).css("visibility","hidden");//once you drag something in, it will delete
                 $(ui.draggable.remove()); //this removes the item from the DOM.
                 player.bag -= 1;
-                if (findingItemStatsInHTML[0] >= findingItemStatsInHTML[1]){
-                    console.log("this is a sword");
-                    player.weapon = findingItemStatsInHTML[0];
-                } else {
-                    console.log("this is a plate armor");
-                    return player.plate = findingItemStatsInHTML[1];
+
+
+                function checkWeaponorArmor(){
+                    if (defStats == 0){
+                       player.weapon = offStats;
+                        console.log("Weapon: "+player.weapon);
+                    }
+                    if (offStats == 0){
+                        player.plate = defStats;
+                        console.log("Armor: "+player.plate);
+
+                    }
 
                 }
 
-                console.log(player.weapon);
-                console.log(player.plate);
+
             }
         });
 
