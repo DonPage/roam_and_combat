@@ -61,7 +61,7 @@
           <file leaf-file-name="map.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/map.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="508" column="51" selection-start="25882" selection-end="25882" vertical-scroll-proportion="0.5091623" vertical-offset="7231" max-vertical-offset="8100">
+                <state line="499" column="49" selection-start="25433" selection-end="25433" vertical-scroll-proportion="0.33246073" vertical-offset="7231" max-vertical-offset="8100">
                   <folding>
                     <marker date="1395762097000" expanded="false" signature="24053:24058" placeholder="..." />
                   </folding>
@@ -390,7 +390,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/map.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="508" column="51" selection-start="25882" selection-end="25882" vertical-scroll-proportion="0.5091623" vertical-offset="7231" max-vertical-offset="8100">
+        <state line="499" column="49" selection-start="25433" selection-end="25433" vertical-scroll-proportion="0.33246073" vertical-offset="7231" max-vertical-offset="8100">
           <folding>
             <marker date="1395762097000" expanded="false" signature="24053:24058" placeholder="..." />
           </folding>
