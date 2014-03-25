@@ -393,8 +393,8 @@
                 inCombat = true;
             }
 
-            mobHP = currentMobHealth;
-            player.hp = currentPlayerHealth;
+            mobHP = Math.round(currentMobHealth);
+            player.hp = Math.round(currentPlayerHealth);
             console.log(mobName+":"+currentMobHealth,"vs",currentPlayerHealth+":Rect");
 
             if (inCombat === false){
@@ -471,7 +471,6 @@
 //                      '><p style="left:'+ randomNumberTop()+'px; '+ 'top:'+ randomNumberLeft()+'px; ">'+loot[randomItem][1]+'</p> </span>';
         var bagHTML = '<span id="'+loot[randomItem][1]+'"class="itemDrag'+itemID+' itemDrag" data-object="'+ [OffStats, DefStats]+'">' +
             '<p style="left:'+ randomNumberTop()+'px; top:'+ randomNumberLeft()+'px;"> '+loot[randomItem][1]+'</p> </span>';
-        console.log(bagHTML);
 
 
         selectBag.innerHTML += bagHTML;
@@ -481,12 +480,9 @@
             drop: function(event, ui){
                 $(this).find("p").html(ui.draggable.attr('id')); //this gets the id of the item being dragged and doesnt get confused on what item is being dropped
                 var findingItemStatsInHTML = $(ui.draggable.attr('data-object')).selector;
-                console.log("Off "+findingItemStatsInHTML[0],"Def "+findingItemStatsInHTML[2],"No sub "+findingItemStatsInHTML);
                 var splitComma = findingItemStatsInHTML.split(',');
-                console.log(splitComma);
                 var PDefStats = parseFloat(splitComma[1]);
                 var POffStats = parseFloat(splitComma[0]);
-                console.log(POffStats, PDefStats);
                 checkWeaponorArmor();
 
 
