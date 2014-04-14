@@ -17,6 +17,7 @@
 
     //Making map canvas
     var map = document.createElement('canvas');
+    var mapCanvas = document.querySelector("#mapCan");
     var ctx = map.getContext('2d');
 
     var selectBag = document.querySelector("#bag");
@@ -32,6 +33,8 @@
     var d_width = $(document).width();
 
     document.body.appendChild(map);
+
+
 
     var clock = new THREE.Clock(); //this code is from the imported script
     var time = clock.getElapsedTime();
@@ -127,6 +130,7 @@
     (function animLoop(){
         requestAnimationFrame(animLoop);
         $('.itemDrag').draggable();
+        $('canvas').draggable();
         render();
         update();
 
