@@ -132,6 +132,7 @@
         $('.itemDrag').draggable();
         $('canvas').draggable();
         $('#bag').draggable();
+        $('#gui').draggable();
         render();
         update();
 
@@ -440,24 +441,25 @@
         var randomNumberItem = ~~(Math.random()*6000);
         var loot =
             [
-                //type          name                ID              OffStats DefStats
+                //type          name                ID              WepStats PlateStats ShieldStats
 
                 //Tier1 :
-                ["plate","ChestPlate of Bronze", randomNumberItem , 0, 2.3],
-                ["shield","Shield of the Outlands",randomNumberItem, 0,2.6],
-                ["weapon","Sword of the Starter",randomNumberItem, 2.1, 0],
+                ["plate","ChestPlate of Bronze", randomNumberItem , 0, 2.3, 0],
+                ["shield","Shield of the Outlands",randomNumberItem, 0, 0, 1.6],
+                ["weapon","Sword of the Starter",randomNumberItem, 2.1, 0, 0],
                 //
-                ["plate","ChestPlate of Wanderer", randomNumberItem , 0, 2.3],
-                ["shield","Shield of the Traveler",randomNumberItem, 0, 2.1],
-                ["weapon","Wooden Sword of the Monk",randomNumberItem, 2.6, 0]
+                ["plate","ChestPlate of Wanderer", randomNumberItem , 0, 2.3, 0],
+                ["shield","Shield of the Traveler",randomNumberItem, 0, 0,  2.1],
+                ["weapon","Wooden Sword of the Monk",randomNumberItem, 2.6, 0, 0]
 
             ];
 
 
         var randomItem = ~~(Math.random()*loot.length);
         var itemType = loot[randomItem][0];
-        var OffStats = loot[randomItem][3];
-        var DefStats = loot[randomItem][4];
+        var WepStats = loot[randomItem][3];
+        var ArmStats = loot[randomItem][4];
+        var ShieldStats = loot[randomItem][5];
         console.log(itemType);
 
         function randomNumberTop () {
@@ -474,7 +476,7 @@
 //        var bagHTML = '<span id='+loot[randomItem][1]+' class=itemDrag'+itemID+' itemDrag data-object='+[loot[randomItem][3],loot[randomItem][4]]+'" ><p> '+loot[randomItem][1]+'</p></span>';
 //        var bagHTML = '<span id="'+loot[randomItem][1]+'"class="itemDrag'+itemID+' itemDrag'+'" data-object="'+ [OffStats,DefStats]+
 //                      '><p style="left:'+ randomNumberTop()+'px; '+ 'top:'+ randomNumberLeft()+'px; ">'+loot[randomItem][1]+'</p> </span>';
-        var bagHTML = '<span id="'+loot[randomItem][1]+'"class="itemDrag'+itemID+' itemDrag" data-object="'+ [OffStats, DefStats]+'">' +
+        var bagHTML = '<span id="'+loot[randomItem][1]+'"class="itemDrag'+itemID+' itemDrag" data-object="'+ [WepStats, ArmStats, ShieldStats]+'">' +
             '<p style="left:'+ randomNumberTop()+'px; top:'+ randomNumberLeft()+'px;"> '+loot[randomItem][1]+'</p> </span>';
 
 
@@ -486,8 +488,10 @@
                 $(this).find("p").html(ui.draggable.attr('id')); //this gets the id of the item being dragged and doesnt get confused on what item is being dropped
                 var findingItemStatsInHTML = $(ui.draggable.attr('data-object')).selector;
                 var splitComma = findingItemStatsInHTML.split(',');
-                var PDefStats = parseFloat(splitComma[1]);
-                var POffStats = parseFloat(splitComma[0]);
+                var PWeaponStats = parseFloat(splitComma[0]);
+                var PPlateStats = parseFloat(splitComma[1]);
+                var PShieldStats = parseFloat(splitComma[2]);
+//                console.log(PShieldStats);
                 checkWeaponorArmor();
 
 
@@ -497,20 +501,26 @@
 
 
                 function checkWeaponorArmor(){
-                    if (PDefStats == 0){
-                       player.weapon = POffStats;
-                       player.str = 3 + POffStats;
-                       $('#Weapon').replaceWith('<p>Weapon: '+(ui.draggable.attr('id')+'('+POffStats+')</p>'));
-                        console.log("Weapon: "+player.weapon);
-                        console.log("Str: "+player.str);
+                    if (PWeaponStats > 0){
+                       player.weapon = PWeaponStats;
+                       player.str = 3 + PWeaponStats;
+                       $('#Weapon').replaceWith('<p>Weapon: '+(ui.draggable.attr('id')+'('+PWeaponStats+')</p>'));
+
                     }
 
-                    if (POffStats == 0){
-                        player.plate = PDefStats;
-                        player.arm = 3 + PDefStats;
-                        $('#Armor').replaceWith('<p>Armor: '+(ui.draggable.attr('id')+'('+PDefStats+')</p>'));
-                        console.log("Armor: "+player.plate);
-                        console.log("Def: "+player.arm);
+                    if (PPlateStats > 0){
+                        player.plate = PPlateStats;
+                        player.arm = 3 + PPlateStats;
+                        $('#Armor').replaceWith('<p>Armor: '+(ui.draggable.attr('id')+'('+PPlateStats+')</p>'));
+
+
+
+                    }
+                    if (PShieldStats > 0){
+                        player.plate = PShieldStats;
+                        player.arm = 3 + PShieldStats;
+                        $('#Shield').replaceWith('<p>Shield: '+(ui.draggable.attr('id')+'('+PShieldStats+')</p>'));
+
 
 
                     }

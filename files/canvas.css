@@ -15,12 +15,19 @@ body
     background-size: cover;
     background-repeat: no-repeat;
 
+
 }
 
 #about
 {
-    font-family: 'Nova Flat', cursive;
+    font-family: helveticaneue, "Helvetica Neue", helvetica, sans-serif;
     color: white;
+    position: fixed;
+    width: 100%;
+    height: 5em;
+    background: rgba(25, 25, 25, 0.8);
+    top:0;
+    left:0;
 }
 
 #bag
@@ -28,9 +35,11 @@ body
 
     float: right;
     position: relative;
-    border-top: 2em outset white;
+    border-top: 2em outset rgba(25, 25, 25, 0.8);
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
+    background: white 0 -2em;
+
 
 }
 
@@ -38,11 +47,13 @@ body
 {
     border: solid 2px gray;
     float:right;
-    width: 10%;
-    margin: 2em;
+    width: 30%;
+    margin: 1em;
     height: 3em;
     font-family: helvetica, arial;
+    text-align: center;
     color: lightgrey;
+
 }
 
 
@@ -52,10 +63,11 @@ body
     border: solid 2px gray;
     clear:both;
     float:right;
-    width: 10%;
-    margin: 2em;
+    width: 30%;
+    margin: 1em;
     height: 15em;
     font-family: helvetica, arial;
+    text-align: center;
     font-size: .9em;
     color: lightgrey;
 }
@@ -65,8 +77,9 @@ body
     border: solid 2px gray;
     clear:both;
     float:right;
-    width: 10%;
-    margin: 2em;
+    text-align: center;
+    width: 30%;
+    margin: 1em;
     height: 3em;
 }
 
@@ -82,6 +95,8 @@ body
     border-top: 1em outset gray;
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
+    color: white;
+    background: gray;
 
     float: right;
     margin: 2em;
@@ -128,7 +143,20 @@ body
 
 canvas
 {
-    border-top: 2em outset white;
+    margin-top: 6em;
+    border-top: 2em outset rgba(25, 25, 25, 0.8);
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
+}
+
+#gui
+{
+    clear: both;
+    border-top: 2em outset rgba(25, 25, 25, 0.8);
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    margin-top: 6em;
+    width: 60%;
+    float: right;
+    background-color: rgba(25, 25, 25, 0.8);
 }
