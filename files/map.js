@@ -219,7 +219,9 @@
         document.querySelector('#loc').innerHTML = " x: "+ column +" y: "+ row +"  ";
 //        document.querySelector('#combatCan').innerHTML ="Stats: "+player.hp+"% || str: "+player.str+" || def:"+player.arm;
 //        document.querySelector('#charStats').innerHTML = "Stats: "+player.hp+"% || str: "+player.str+" || def: "+player.arm+" BAG: "+player.bag+"/4";
-        document.querySelector('#charStats').innerHTML = '<span id=greenHP>Health: '+player.hp+'% </span>'+'<span id=yellow>Str: '+player.str+' </span>'+'<span id=blue>Def: '+player.arm+' </span>'+'<span id=greenBag>Bag: '+player.bag+'/4 </span>';
+        document.querySelector('#charStats').innerHTML = '<span id=yellow>Str: '+player.str+' </span>'+'<span id=blue>Def: '+player.arm+' </span>';
+        document.querySelector('#PlayerHealth').innerHTML = '<span id=greenHP>Health: '+player.hp+'% </span>';
+        document.querySelector('#bagSpace').innerHTML = '<span id=greenBag>Bag: '+player.bag+'/4 </span>';
         checkPlayerValues();
         wallIsct(player);
     }
@@ -363,7 +365,7 @@
         var getPlayerArm = player.shield + player.plate + player.arm;
 
 
-
+        //Combat still in console.log for now...
         while(inCombat){
             var mobDamageMulti = ~~(Math.random()*3)+1;
             var playerDamageMulti = ~~(Math.random()*3)+1;
