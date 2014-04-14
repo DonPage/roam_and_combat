@@ -441,18 +441,19 @@
     function spawnLoot(){
         player.bag += 1;
         var randomNumberItem = ~~(Math.random()*6000);
+        var statMultiplier = ~~(Math.random() * (.4 - .1 + .1)) + .1;
         var loot =
             [
                 //type          name                ID              WepStats PlateStats ShieldStats
 
                 //Tier1 :
-                ["plate","ChestPlate of Bronze", randomNumberItem , 0, 2.3, 0],
-                ["shield","Shield of the Outlands",randomNumberItem, 0, 0, 1.6],
-                ["weapon","Sword of the Starter",randomNumberItem, 2.1, 0, 0],
+                ["plate","ChestPlate of Bronze", randomNumberItem , 0, 2.3 + statMultiplier, 0],
+                ["shield","Shield of the Outlands",randomNumberItem, 0, 0, 1.6 + statMultiplier],
+                ["weapon","Sword of the Starter",randomNumberItem, 2.1 + statMultiplier, 0, 0],
                 //
-                ["plate","ChestPlate of Wanderer", randomNumberItem , 0, 2.3, 0],
-                ["shield","Shield of the Traveler",randomNumberItem, 0, 0,  2.1],
-                ["weapon","Wooden Sword of the Monk",randomNumberItem, 2.6, 0, 0]
+                ["plate","ChestPlate of Wanderer", randomNumberItem , 0, 2.3 + statMultiplier, 0],
+                ["shield","Shield of the Traveler",randomNumberItem, 0, 0,  2.1 + statMultiplier],
+                ["weapon","Wooden Sword of the Monk",randomNumberItem, 2.6 + statMultiplier, 0, 0]
 
             ];
 
