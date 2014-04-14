@@ -97,7 +97,6 @@ body
     border-top-right-radius: 1em;
     color: white;
     background: gray;
-
     float: right;
     margin: .5em;
 
@@ -151,7 +150,7 @@ canvas
 
 #gui
 {
-    clear: both;
+
     border-top: 2em outset rgba(25, 25, 25, 0.8);
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;

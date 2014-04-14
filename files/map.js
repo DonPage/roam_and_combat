@@ -462,7 +462,6 @@
         var WepStats = loot[randomItem][3];
         var ArmStats = loot[randomItem][4];
         var ShieldStats = loot[randomItem][5];
-        console.log(itemType);
 
         function randomNumberTop () {
             return ~~(Math.random() * (-169 - 23 + 1)) + 23;
@@ -478,8 +477,21 @@
 //        var bagHTML = '<span id='+loot[randomItem][1]+' class=itemDrag'+itemID+' itemDrag data-object='+[loot[randomItem][3],loot[randomItem][4]]+'" ><p> '+loot[randomItem][1]+'</p></span>';
 //        var bagHTML = '<span id="'+loot[randomItem][1]+'"class="itemDrag'+itemID+' itemDrag'+'" data-object="'+ [OffStats,DefStats]+
 //                      '><p style="left:'+ randomNumberTop()+'px; '+ 'top:'+ randomNumberLeft()+'px; ">'+loot[randomItem][1]+'</p> </span>';
+//        var bagHTML = '<span id="'+loot[randomItem][1]+'"class="itemDrag'+itemID+' itemDrag" data-object="'+ [WepStats, ArmStats, ShieldStats]+'">' +
+//            '<p style="left:'+ randomNumberTop()+'px; top:'+ randomNumberLeft()+'px;"> '+loot[randomItem][1]+'</p> </span>';
         var bagHTML = '<span id="'+loot[randomItem][1]+'"class="itemDrag'+itemID+' itemDrag" data-object="'+ [WepStats, ArmStats, ShieldStats]+'">' +
-            '<p style="left:'+ randomNumberTop()+'px; top:'+ randomNumberLeft()+'px;"> '+loot[randomItem][1]+'</p> </span>';
+            '<p style="left:'+ randomNumberTop()+'px; top:'+ randomNumberLeft()+'px;"> '+loot[randomItem][1]+'</p>'+ showStats() +'</span>';
+        function showStats(){
+            if (itemType === 'plate'){
+                return ArmStats;
+            }
+            if (itemType === 'weapon'){
+                return WepStats;
+            }
+            if (itemType === 'shield'){
+                return ShieldStats;
+            }
+        }
 
 
         selectBag.innerHTML += bagHTML;
@@ -493,7 +505,6 @@
                 var PWeaponStats = parseFloat(splitComma[0]);
                 var PPlateStats = parseFloat(splitComma[1]);
                 var PShieldStats = parseFloat(splitComma[2]);
-//                console.log(PShieldStats);
                 checkWeaponorArmor();
 
 
