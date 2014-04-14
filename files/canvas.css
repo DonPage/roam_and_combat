@@ -26,8 +26,12 @@ body
 #bag
 {
 
-    /*float: right;*/
+    float: right;
     position: relative;
+    border-top: 2em outset white;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+
 }
 
 #itemDrop
@@ -75,9 +79,13 @@ body
 .itemDrag
 {
     visibility: visible;
-    border: dotted 2px gray;
+    border-top: 1em outset gray;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+
     float: right;
     margin: 2em;
+
 
 
 }
@@ -120,7 +128,7 @@ body
 
 canvas
 {
-    border-top: 1em outset white;
+    border-top: 2em outset white;
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
 }

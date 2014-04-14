@@ -17,7 +17,7 @@
 
     //Making map canvas
     var map = document.createElement('canvas');
-    var mapCanvas = document.querySelector("#mapCan");
+
     var ctx = map.getContext('2d');
 
     var selectBag = document.querySelector("#bag");
@@ -131,6 +131,7 @@
         requestAnimationFrame(animLoop);
         $('.itemDrag').draggable();
         $('canvas').draggable();
+        $('#bag').draggable();
         render();
         update();
 
